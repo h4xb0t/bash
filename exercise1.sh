@@ -40,7 +40,7 @@ done
 # sets the first argument to file
 # FILE=$1
 
-#sets all arguments to file
+#sets all arguments passed to file variable
 FILE=$@
 
 for FILE in $@; do
@@ -58,3 +58,5 @@ elif [ -d $FILE ]; then
     ls -al $FILE
 fi
 done
+
+exit 0
