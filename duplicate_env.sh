@@ -1,13 +1,16 @@
 #!/bin/bash
 
-read -p 'What is your datacenter / environment name? ' DC
+read -p 'What is the new datacenter / environment name? ' DC
+
+# old DC to copy from
+# read -p 'What is the datacenter / environment that you would like to duplicate? ' DC_OLD
 
 SERVICE=$@
 
-# Make new directories and copy files from bkk2 (except encrypted secrets) - this could take another variable of an environment you'd like to copy from
+# make new directories and copy files from bkk2 (except encrypted secrets) - this could take another variable of an environment you'd like to copy from (see DC_OLD)
 for i in $SERVICE
 do
-# new if test
+# if test for dns - could add other services if needed
 if [ $i = "dns" ]
 then
 mkdir -p dns-master/env/$DC
@@ -32,6 +35,5 @@ read -p 'Enter the IP for SPOD002: ' SPOD2
 echo $SPOD1
 echo $SPOD2
 
-# cp /env/{ $NEWENV }/
 
 
