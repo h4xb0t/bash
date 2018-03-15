@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # this script is currently designed to copy BKK2 files to the new DC folders - renaming those with SPOD IPs in the names appropriately.
+# pass arguments with the name of the services needed at runtime i.e. './duplicate_env.sh cacti dns pulp' you will be prompted for thenew datacenter name and SPOD IPs.
 
 read -p 'Enter the new datacenter / environment name: ' DC
 
